@@ -15,8 +15,8 @@
                 {% for movie in movies %}
                 <li class="list-group-item">
                     <a href="{{movie}}">{{ movie | capfirst }}</a>
-                    <a href="movies/{{movie.id}}">{{ movie | capfirst }}</a>
-                    <p>{{ movie.genre }}</p>
+                    <a href="movie/{{movie.id}}">{{ movie | capfirst }}</a>
+                    <p>{{ movie.publication_year }}</p>
                 </li>
                 {% endfor %}
             </ul>

@@ -1,17 +1,17 @@
 
 
 # Create your views here.
-from django.shortcuts import render
+#from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from .models import Movie
 
 def index(request):
-    movies = Movie.objects.order_by('genre')
+    movies = Movie.objects.order_by('publication_year')
     template = loader.get_template('index.html')
-    return HttpResponse(template.render({'movies:': movies}, request))
+    return HttpResponse(template.render({'movies': movies}, request))
 
-def movie_details(request, movie_id):
+def movie(request, movie_id):
     movie = Movie.objects.get(mk = movie_id)
     template = loader.get_template('display_movies.html')
     context = {
